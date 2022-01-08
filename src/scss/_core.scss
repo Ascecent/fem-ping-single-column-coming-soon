@@ -1,0 +1,150 @@
+@use "sass:math";
+
+/*=========================================================
+================       CORE STYLES        =================
+=========================================================*/
+
+// -------------------------------
+// FUNCTIONS
+// -------------------------------
+
+// Convert px to rem units
+@function pxToRem($unit) {
+  @return math.div($unit, 16) + rem;
+}
+
+// -------------------------------
+
+// -------------------------------
+// VARIABLES
+// -------------------------------
+
+// ------------
+// BREAKPOINTS
+// ------------
+
+$breakpoints: (
+  xsm: 400px,
+  sm: 576px,
+  md: 768px,
+  lg: 1024px,
+  xlg: 1400px,
+);
+
+// ------------
+
+// ------------
+// COLORS
+// ------------
+
+// Primary
+$blue: hsl(223, 87%, 63%);
+
+// Secondary
+$paleBlue: hsl(223, 100%, 88%);
+$lightRed: hsl(354, 100%, 66%);
+
+// Neutral
+$gray: hsl(0, 0%, 59%);
+$veryDarkBlue: hsl(209, 33%, 12%);
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+
+// ------------
+
+// ------------
+// FONTS
+// ------------
+
+// Families
+$fontFamilyLibreFranklin: "Libre Franklin", sans-serif;
+
+// Sizes
+$fontSizeNormal: pxToRem(20);
+$fontSizeMainHeadingSm: pxToRem(22);
+$fontSizeMainHeadingLg: pxToRem(50);
+
+// Weights
+$fontWeightLight: 300;
+$fontWeightRegular: 400;
+$fontWeightMedium: 500;
+$fontWeightSemiBold: 600;
+$fontWeightBold: 700;
+
+// ------------
+
+// -------------------------------
+
+// -------------------------------
+// MIXINS
+// -------------------------------
+
+// Media breakpoint min-width
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Media breakpoint max-width
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @media (max-width: ($breakpoint-value - 1)) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// -------------------------------
+
+// -------------------------------
+// GLOBAL STYLES
+// -------------------------------
+
+body {
+  background-color: $white;
+
+  font: {
+    family: $fontFamilyLibreFranklin;
+    size: $fontSizeNormal;
+    weight: $fontWeightLight;
+  }
+
+  margin-inline: auto;
+  max-width: pxToRem(639);
+
+  padding: pxToRem(85) pxToRem(28) pxToRem(37);
+
+  text-align: center;
+
+  @include media-breakpoint-up(md) {
+    padding-inline: 0;
+    padding-block-end: pxToRem(50);
+  }
+}
+
+img {
+  width: 100%;
+}
+
+// -------------------------------
+
+// -------------------------------
+// UTILITIES
+// -------------------------------
+
+.hidden {
+  display: none;
+}
+
+// -------------------------------

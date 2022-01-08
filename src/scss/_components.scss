@@ -1,0 +1,262 @@
+/*=========================================================
+================     COMPONENTS STYLES    =================
+=========================================================*/
+
+// Buttons
+
+.btn {
+  &-submit {
+    background-color: $blue;
+    border: none;
+    border-radius: pxToRem(20);
+
+    color: $white;
+    cursor: pointer;
+
+    font: {
+      size: pxToRem(12);
+      weight: $fontWeightSemiBold;
+    }
+
+    line-height: pxToRem(15);
+
+    padding: pxToRem(12);
+
+    transition: background-color 300ms ease-in-out, transform 100ms ease-in-out;
+
+    width: 100%;
+
+    &:hover {
+      background-color: lighten($color: $blue, $amount: 5);
+    }
+
+    &:active {
+      transform: scale(0.9);
+    }
+
+    @include media-breakpoint-up(md) {
+      border-radius: pxToRem(26);
+      font-size: pxToRem(16);
+      max-width: pxToRem(200);
+      padding-block: pxToRem(18);
+    }
+  }
+}
+
+// Form control styling
+.form-control {
+  input {
+    appearance: none;
+
+    border: 1px solid $paleBlue;
+    border-radius: pxToRem(20);
+
+    color: $veryDarkBlue;
+    caret-color: $paleBlue;
+
+    font: {
+      size: pxToRem(12);
+      weight: $fontWeightLight;
+    }
+
+    margin-block-end: pxToRem(10);
+
+    padding: pxToRem(12);
+
+    width: 100%;
+
+    @include media-breakpoint-up(md) {
+      border-radius: pxToRem(26);
+      font-size: pxToRem(16);
+      margin: 0;
+      padding: pxToRem(18) pxToRem(30);
+    }
+
+    &::placeholder {
+      color: $paleBlue;
+    }
+
+    &:focus {
+      box-shadow: 0 0 pxToRem(15) pxToRem(-5) $paleBlue;
+
+      outline: none;
+    }
+  }
+
+  small {
+    color: $lightRed;
+    display: none;
+
+    margin-block: 0 pxToRem(24);
+
+    opacity: 0;
+    visibility: hidden;
+
+    @include media-breakpoint-up(md) {
+      bottom: pxToRem(-20);
+      font-size: pxToRem(14);
+
+      left: pxToRem(30);
+      letter-spacing: -0.05em;
+
+      margin: 0;
+      position: absolute;
+    }
+  }
+
+  &.error {
+    input {
+      caret-color: $lightRed;
+      border-color: $lightRed;
+
+      &:focus {
+        box-shadow: 0 0 pxToRem(15) pxToRem(-5) $lightRed;
+      }
+
+      &::placeholder {
+        color: $lightRed;
+      }
+    }
+
+    small {
+      display: block;
+
+      font: {
+        size: pxToRem(10);
+        style: italic;
+      }
+
+      letter-spacing: 0.015em;
+      line-height: pxToRem(12);
+
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include media-breakpoint-up(md) {
+    flex: 1;
+  }
+}
+
+.header {
+  &__logo {
+    margin-block-end: pxToRem(40);
+    margin-inline: auto;
+
+    width: pxToRem(55);
+
+    @include media-breakpoint-up(md) {
+      margin-block-end: pxToRem(45);
+      width: pxToRem(85);
+    }
+  }
+}
+
+.main {
+  &__title {
+    color: $gray;
+
+    font: {
+      size: clamp($fontSizeMainHeadingSm, 5vw, $fontSizeMainHeadingLg);
+      weight: $fontWeightLight;
+    }
+
+    letter-spacing: 0.005em;
+    line-height: pxToRem(27);
+
+    margin-block: 0 pxToRem(17);
+
+    span {
+      color: $veryDarkBlue;
+      font-weight: $fontWeightBold;
+    }
+
+    @include media-breakpoint-up(md) {
+      line-height: pxToRem(61);
+      letter-spacing: -0.015em;
+    }
+  }
+
+  &__description {
+    color: $veryDarkBlue;
+
+    font-size: pxToRem(12);
+
+    letter-spacing: 0.005em;
+    line-height: pxToRem(15);
+
+    margin-block: 0 pxToRem(32);
+
+    @include media-breakpoint-up(md) {
+      font-size: pxToRem(20);
+
+      line-height: pxToRem(24);
+      letter-spacing: 0;
+    }
+  }
+
+  &__form {
+    padding-inline: pxToRem(20);
+    position: relative;
+
+    margin-block-end: pxToRem(40);
+
+    @include media-breakpoint-up(md) {
+      padding: 0;
+      margin-block-end: pxToRem(90);
+    }
+  }
+
+  &__slack {
+    margin-block-end: pxToRem(120);
+
+    @include media-breakpoint-up(md) {
+      margin-block-end: pxToRem(70);
+    }
+  }
+}
+
+.footer {
+  &__social {
+    margin-block-end: pxToRem(27);
+
+    @include media-breakpoint-up(md) {
+      margin-block-end: pxToRem(25);
+    }
+  }
+
+  .social-icon {
+    border: 1px solid $paleBlue;
+    border-radius: 50%;
+
+    color: $blue;
+
+    height: pxToRem(31);
+
+    transition: background-color 300ms ease-in-out, color 300ms ease-in-out;
+
+    width: pxToRem(31);
+
+    svg {
+      width: pxToRem(15);
+      height: pxToRem(15);
+    }
+
+    &:hover {
+      background-color: $blue;
+      color: $white;
+    }
+  }
+
+  &__copyright {
+    color: $gray;
+    font-size: pxToRem(10);
+    line-height: pxToRem(12);
+
+    @include media-breakpoint-up(md) {
+      font-size: pxToRem(12);
+      line-height: pxToRem(15);
+    }
+  }
+}

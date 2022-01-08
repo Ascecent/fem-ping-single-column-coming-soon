@@ -1,0 +1,26 @@
+/*=========================================================
+================      LAYOUT STYLES       =================
+=========================================================*/
+
+.main {
+  &__form {
+    @include media-breakpoint-up(md) {
+      display: flex;
+      column-gap: pxToRem(16);
+    }
+  }
+}
+
+.footer {
+  &__social {
+    display: flex;
+    column-gap: pxToRem(13);
+    justify-content: center;
+  }
+
+  .social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
