@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e4513300-af5b-4892-ad0b-670467dd80de/deploy-status)](https://app.netlify.com/sites/priceless-borg-cc4358/deploys)
+
 # Frontend Mentor - Ping coming soon page solution
 
 This is a solution to the [Ping coming soon page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/ping-single-column-coming-soon-page-5cadd051fec04111f7b848da). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
@@ -33,12 +35,12 @@ Users should be able to:
 
 #### Desktop
 
-![](./screenshots/375.png)
+![](./screenshots/1440.png)
 
 ### Links
 
-- Solution URL: [Solution](https://your-solution-url.com)
-- Live Site URL: [Netlify](https://your-live-site-url.com)
+- Solution URL: [Solution](https://github.com/Ascecent/fem-ping-single-column-coming-soon)
+- Live Site URL: [Netlify](https://www.frontendmentor.io/solutions/ping-single-column-coming-soon-with-sass-flex-grid-js-and-webpack-QC9XP9lb3)
 
 ## My process
 
